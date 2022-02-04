@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: black!important;
+}
+img {
+    max-width: 100%;
+    user-select: none;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+input,button:focus {
+    outline: none!important
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+
+
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+.tabs {
+    padding-top: 30px;
+    grid-column: 2/3;
+}
+.tabs__nav {
+    display: flex;
+}
+.tabs__item {
+    display: none;
+    background-color: white;
+    font-weight: 600;
+    padding: 20px;
+}
+.tabs__item.active {
+    display: block;
+}
+.tabs__nav-btn {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 600;
+    border: 0;
+    background-color: grey;
+}
+.tabs__nav-btn:hover {
+    background-color: ghostwhite;
+    transition: all 0.5s ease;
+}
+.tabs__nav-btn.active {
+    background-color: purple;
+    transition: all 0.5s ease;
+}

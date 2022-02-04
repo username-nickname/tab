@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Табы JS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="grid">
+            <div class="tabs">
+            <div class="tabs__nav">
+                <input type="button" class="tabs__nav-btn " value="TAB 1" data-tab="#tab_1">
+                <input type="button" class="tabs__nav-btn" value="TAB 2" data-tab="#tab_2">
+                <input type="button" class="tabs__nav-btn" value="TAB 3" data-tab="#tab_3">
+            </div>
+            <div class="tabs__item" id="tab_1">
+                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eaque repellendus ducimus vitae facere voluptatibus dolor accusantium doloribus provident. Eaque laborum odit voluptate natus nostrum a mollitia placeat, esse eos.</span>
+                <span>Quasi quo, nam. Aliquam eos odit illo hic fugit, illum, saepe ab, quidem non rerum consectetur? Possimus repellendus animi, architecto a mollitia magni minima, provident accusantium repudiandae! Odio, ratione, ut!</span>
+                </p>
+            </div>
+            <div class="tabs__item" id="tab_2">
+                <p><span>2 ipsum dolor sit amet, consectetur adipisicing elit. Possimus eaque repellendus ducimus vitae facere voluptatibus dolor accusantium doloribus provident. Eaque laborum odit voluptate natus nostrum a mollitia placeat, esse eos.</span>
+                <span>Quasi quo, nam. Aliquam eos odit illo hic fugit, illum, saepe ab, quidem non rerum consectetur? Possimus repellendus animi, architecto a mollitia magni minima, provident accusantium repudiandae! Odio, ratione, ut!</span>
+                </p>
+            </div>
+            <div class="tabs__item" id="tab_3">
+                <p><span>3 ipsum dolor sit amet, consectetur adipisicing elit. Possimus eaque repellendus ducimus vitae facere voluptatibus dolor accusantium doloribus provident. Eaque laborum odit voluptate natus nostrum a mollitia placeat, esse eos.</span>
+                <span>Quasi quo, nam. Aliquam eos odit illo hic fugit, illum, saepe ab, quidem non rerum consectetur? Possimus repellendus animi, architecto a mollitia magni minima, provident accusantium repudiandae! Odio, ratione, ut!</span>
+                </p>
+            </div>
+        
+        </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    var tabsBtn = document.querySelectorAll(".tabs__nav-btn");
+    var tabsItem = document.querySelectorAll(".tabs__item");
+    tabsBtn.forEach(function(item) {
+        item.addEventListener("click", function () {
+            var currentBtn = item;
+            var tabId = currentBtn.getAttribute("data-tab");
+            var currentTab = document.querySelector(tabId);
+            
+            if ( ! currentBtn.classList.contains("active") ){
+                tabsBtn.forEach(function(item) {
+                    item.classList.remove("active"); 
+                });
+            
+                tabsItem.forEach(function(item) {
+                    item.classList.remove("active"); 
+                });
+            
+                currentBtn.classList.add("active");
+            
+                currentTab.classList.add("active");
+            }
+            
+        });
+    });
+    
+    document.querySelector(".tabs__nav-btn:nth-child(1)").click();
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</html>
